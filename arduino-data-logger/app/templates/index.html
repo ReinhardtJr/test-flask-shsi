@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SHSI Poultry Dashboard</title>
+
+  <!-- Bootstrap + Chart.js -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    :root{
+      --sidebar-w: 240px;
+      --sidebar-collapsed-w: 72px;
+      --primary: #1e9a3a;
+      --sky-top: #bfe9e9;
+      --sky-bottom: #d8f3f5;
+      --glass: rgba(255,255,255,0.8);
+      --muted: #678089;
+      --shadow: 0 6px 18px rgba(10,20,30,0.08);
+      --radius: 14px;
+    }
+
+    body {
+      background: linear-gradient(180deg,var(--sky-top) 0%, var(--sky-bottom) 60%, #f6fbfd 100%);
+      font-family: "Segoe UI", system-ui;
+      display: flex;
+      min-height: 100vh;
+      color: #0c4b35;
+      overflow-x: hidden;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: var(--sidebar-w);
+      background: linear-gradient(60deg,var(--primary) 0%, #127481 70%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: width 0.3s ease;
+      box-shadow: var(--shadow);
+      z-index: 1030;
+    }
+
+    .sidebar.collapsed {
+      width: var(--sidebar-collapsed-w);
+    }
+
+    .brand {
+      text-align: center;
+      padding: 16px 0;
+      font-weight: 700;
+      letter-spacing: .5px;
+      font-size: 1.1rem;
+    }
+
+    .brand-logo {
+      width: 130px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .sidebar.collapsed .brand-logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 6px;
+    }
+
+    .nav-link {
+      color: rgba(255,255,255,0.95);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border-radius: 10px;
+      transition: background 0.2s;
+    }
+    .nav-link:hover, .nav-link.active {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .sidebar.collapsed .nav-link span.label,
+    .sidebar.collapsed .brand { display: none; }
+
+    .sidebar.collapsed .nav-link {
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    .main {
+      margin-left: var(--sidebar-w);
+      padding: 26px;
+      flex: 1;
+      transition: margin-left 0.3s ease;
+    }
+
+    .collapsed ~ .main {
+      margin-left: var(--sidebar-collapsed-w);
+    }
+
+    .topbar {
+      background: var(--glass);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .menu-btn {
+      border: none;
+      background: var(--glass);
+      border-radius: 10px;
+      width: 44px; height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card {
+      background: var(--glass);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      border: none;
+    }
+
+    .card .label { color: var(--muted); font-weight: 600; }
+    .card .value { font-size: 2rem; font-weight: 800; color: #0c4b35; }
+
+    .range-btn.active { background: var(--primary); color: #fff; border: none; }
+
+    .footer {
+      margin-top: auto;
+      text-align: center;
+      color: #678089;
+      font-size: 0.9rem;
+      position: relative;
+    }
+
+    .footer::before {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 50px;
+      background-repeat: repeat-x;
+      background-position: bottom;
+      z-index: -1;
+    }
+
+    .cluster-tabs {
+      background: var(--glass);
+      border-radius: 12px;
+      padding: 6px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .cluster-tab {
+      border: 2px solid var(--primary);
+      background: transparent;
+      color: var(--primary);
+      padding: 7px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .cluster-tab:hover {
+      background: rgba(30,154,58,0.15);
+    }
+
+    .cluster-tab.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 0 6px rgba(30,154,58,0.4);
+    }
+
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #8e63ff;
+      border: none;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+
+    .scroll-top-btn.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (max-width: 980px) {
+      .sidebar { position: fixed; height: 100vh; z-index: 1040; }
+      .main { margin-left: 0; padding: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <nav id="sidebar" class="sidebar">
+    <div>
+      <div class="brand">
+        <img src="../static/icons/logo-shsi.png" class="brand-logo">
+      </div>
+      <a href="#" class="nav-link active"><span class="icon">📊</span> <span class="label">Dashboard</span></a>
+      <a href="#" class="nav-link"><span class="icon">🌡</span> <span class="label">Sensors</span></a>
+      <a href="#" class="nav-link"><span class="icon">🏠</span> <span class="label">Clusters</span></a>
+      <a href="#" class="nav-link"><span class="icon">🚨</span> <span class="label">Alerts</span></a>
+      <a href="#" class="nav-link"><span class="icon">⚙️</span> <span class="label">Settings</span></a>
+    </div>
+    <div class="p-3">
+      <a href="#" class="nav-link"><span class="icon">🚪</span> <span class="label">Logout</span></a>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="main">
+    <div class="topbar">
+      <div class="d-flex align-items-center gap-3">
+        <button id="toggleBtn" class="menu-btn">☰</button>
+        <div>
+          <h4 class="m-0 fw-bold">Dashboard Overview</h4>
+          <div class="text-muted small">Poultry environment control center</div>
+        </div>
+      </div>
+      <div id="datetime" class="fw-semibold text-muted small">—</div>
+    </div>
+    
+    <!-- Cluster Tab Bar -->
+    <div class="cluster-tabs text-center mb-3">
+      <button class="cluster-tab active" data-cluster="OfficeA1">Office A1</button>
+      <button class="cluster-tab" data-cluster="ModularOffice2">Modular Office 2</button>
+      <button class="cluster-tab" data-cluster="OfficeMain">Office</button>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="row g-3 mb-3">
+      <div class="col-md-4">
+        <div class="card p-3 text-center">
+          <div class="label">Temperature (°C)</div>
+          <div id="temp" class="value">--</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 text-center">
+          <div class="label">Humidity (%)</div>
+          <div id="hum" class="value">--</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 text-center">
+          <div class="label">Last Updated</div>
+          <div id="time" class="value fs-5">--</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Range buttons -->
+    <div class="text-center mb-3">
+      <div class="btn-group flex-wrap">
+        <button class="btn btn-outline-success range-btn active" data-range="1h">1h</button>
+        <button class="btn btn-outline-success range-btn" data-range="1d">1d</button>
+        <button class="btn btn-outline-success range-btn" data-range="3d">3d</button>
+        <button class="btn btn-outline-success range-btn" data-range="7d">7d</button>
+        <button class="btn btn-outline-success range-btn" data-range="1m">1m</button>
+        <button class="btn btn-outline-success range-btn" data-range="3m">3m</button>
+        <button class="btn btn-outline-success range-btn" data-range="6m">6m</button>
+        <button class="btn btn-outline-success range-btn" data-range="1y">1y</button>
+      </div>
+      <div>
+        <button id="exportBtn" class="btn btn-success mt-3 fw-bold">Export Data (CSV)</button>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h6 class="fw-bold mb-2">Temperature Trend</h6>
+          <canvas id="tempChart" height="340"></canvas>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h6 class="fw-bold mb-2">Humidity Trend</h6>
+          <canvas id="humChart" height="340"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer mt-5">
+      <div>© 2025 SHSI Environmental Monitoring</div>
+    </footer>
+  </main>
+  
+
+  <script>
+    // Sidebar toggle
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('toggleBtn');
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+    });
+
+    // Clock
+    const dt = document.getElementById('datetime');
+    function updateClock(){
+      const now = new Date();
+      dt.innerText = now.toLocaleString();
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Charts
+    const tempChart = new Chart(document.getElementById('tempChart'), {
+      type: 'line',
+      data: { labels: [], datasets: [{ label: 'Temperature (°C)', data: [], borderColor: 'red', tension: 0.3 }] },
+      options: { scales: { x: { ticks: { autoSkip: true } } } }
+    });
+    const humChart = new Chart(document.getElementById('humChart'), {
+      type: 'line',
+      data: { labels: [], datasets: [{ label: 'Humidity (%)', data: [], borderColor: 'blue', tension: 0.3 }] },
+      options: { scales: { x: { ticks: { autoSkip: true } } } }
+    });
+
+    //auto scrollup
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) scrollTopBtn.classList.add("show");
+      else scrollTopBtn.classList.remove("show");
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    async function updateLatest() {
+      try {
+        const res = await fetch('/api/latest');
+        if (!res.ok) return;
+        const data = await res.json();
+        document.getElementById('temp').innerText = data.temperature_in_c.toFixed(1);
+        document.getElementById('hum').innerText = data.humidity.toFixed(1);
+        document.getElementById('time').innerText = new Date(data.timestamp).toLocaleString();
+      } catch (err) { console.error(err); }
+    }
+
+    async function loadHistory(range='1h') {
+      try {
+        const res = await fetch(`/api/history?range=${range}`);
+        if (!res.ok) return;
+        const data = await res.json();
+        const labels = data.map(d => {
+          const ts = new Date(d.timestamp);
+          if (currentRange === '1h' || currentRange === '1d') {
+            return ts.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+          } else {
+            return ts.toLocaleDateString([], { month: 'short', day: 'numeric' });
+          }
+        });
+        tempChart.data.labels = labels;
+        humChart.data.labels = labels;
+        tempChart.data.datasets[0].data = data.map(d => d.temperature_in_c);
+        humChart.data.datasets[0].data = data.map(d => d.humidity);
+        tempChart.update(); humChart.update();
+      } catch (err) { console.error(err); }
+    }
+
+    let currentRange = '1h';
+    let currentCluster = "OfficeA1";
+
+    document.querySelectorAll('.cluster-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cluster-tab').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCluster = btn.dataset.cluster;
+        loadHistory(currentRange, currentCluster);
+        updateLatest(currentCluster);
+      });
+    });
+
+    document.querySelectorAll('.range-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.range-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentRange = btn.dataset.range;
+        loadHistory(currentRange);
+      });
+    });
+
+    document.getElementById('exportBtn').addEventListener('click', () => {
+      window.location.href = `/api/export?range=${currentRange}`;
+    });
+
+    updateLatest();
+    loadHistory('1h');
+    setInterval(() => { updateLatest(); loadHistory(currentRange); }, 60000);
+  </script>
+  <button id="scrollTopBtn" class="scroll-top-btn">▲</button>
+</body>
+</html>

@@ -1,0 +1,111 @@
+2025-11-05 16:04:10,905 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26.1, 'temperature_in_f': 78.98, 'humidity': 88.5, 'heat_index_in_c': 28.22731, 'heat_index_in_f': 82.80966} [in views.py: 19]
+2025-11-05 16:05:10,912 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26.1, 'temperature_in_f': 78.98, 'humidity': 90.8, 'heat_index_in_c': 28.32862, 'heat_index_in_f': 82.99203} [in views.py: 19]
+2025-11-05 16:06:10,964 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26, 'temperature_in_f': 78.8, 'humidity': 90.9, 'heat_index_in_c': 28.07154, 'heat_index_in_f': 82.52928} [in views.py: 19]
+2025-11-05 16:07:10,911 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26, 'temperature_in_f': 78.8, 'humidity': 92.2, 'heat_index_in_c': 28.12034, 'heat_index_in_f': 82.61712} [in views.py: 19]
+2025-11-05 16:08:10,882 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26, 'temperature_in_f': 78.8, 'humidity': 92.3, 'heat_index_in_c': 28.1241, 'heat_index_in_f': 82.62388} [in views.py: 19]
+2025-11-05 16:08:52,315 ERROR: Exception on /favicon.ico [GET] [in app.py: 1414]
+Traceback (most recent call last):
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1458, in dispatch_request
+    self.raise_routing_exception(req)
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1440, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\werkzeug\routing\map.py", line 655, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1341, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1281, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\app\__init__.py", line 69, in page_not_found
+    return render_template('404.html'), 404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: 404.html
+2025-11-05 16:09:10,896 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26, 'temperature_in_f': 78.8, 'humidity': 93, 'heat_index_in_c': 28.1504, 'heat_index_in_f': 82.67122} [in views.py: 19]
+2025-11-05 16:10:10,924 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26.1, 'temperature_in_f': 78.98, 'humidity': 93.4, 'heat_index_in_c': 28.44403, 'heat_index_in_f': 83.19978} [in views.py: 19]
+2025-11-05 16:11:11,023 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26.1, 'temperature_in_f': 78.98, 'humidity': 93.3, 'heat_index_in_c': 28.43958, 'heat_index_in_f': 83.19176} [in views.py: 19]
+2025-11-05 16:12:11,086 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26, 'temperature_in_f': 78.8, 'humidity': 94.1, 'heat_index_in_c': 28.19176, 'heat_index_in_f': 82.74567} [in views.py: 19]
+2025-11-05 16:13:10,890 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.9, 'temperature_in_f': 78.62, 'humidity': 94.7, 'heat_index_in_c': 27.92986, 'heat_index_in_f': 82.27425} [in views.py: 19]
+2025-11-05 16:14:10,888 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.9, 'temperature_in_f': 78.62, 'humidity': 94.9, 'heat_index_in_c': 27.93597, 'heat_index_in_f': 82.28526} [in views.py: 19]
+2025-11-05 16:15:10,898 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.9, 'temperature_in_f': 78.62, 'humidity': 93, 'heat_index_in_c': 27.87782, 'heat_index_in_f': 82.18058} [in views.py: 19]
+2025-11-05 16:16:11,019 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.7, 'temperature_in_f': 78.26, 'humidity': 90.7, 'heat_index_in_c': 27.30261, 'heat_index_in_f': 81.1452} [in views.py: 19]
+2025-11-05 16:17:10,933 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.5, 'temperature_in_f': 77.9, 'humidity': 91.1, 'heat_index_in_c': 26.81266, 'heat_index_in_f': 80.26327} [in views.py: 19]
+2025-11-05 16:18:11,014 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.5, 'temperature_in_f': 77.9, 'humidity': 92.1, 'heat_index_in_c': 26.81675, 'heat_index_in_f': 80.27063} [in views.py: 19]
+2025-11-05 16:19:11,229 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.5, 'temperature_in_f': 77.9, 'humidity': 92.3, 'heat_index_in_c': 26.81751, 'heat_index_in_f': 80.272} [in views.py: 19]
+2025-11-05 16:20:11,067 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.5, 'temperature_in_f': 77.9, 'humidity': 93.4, 'heat_index_in_c': 26.8213, 'heat_index_in_f': 80.27883} [in views.py: 19]
+2025-11-05 16:21:10,962 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.6, 'temperature_in_f': 78.08, 'humidity': 94.2, 'heat_index_in_c': 27.09148, 'heat_index_in_f': 80.76514} [in views.py: 19]
+2025-11-05 16:22:10,961 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.6, 'temperature_in_f': 78.08, 'humidity': 94.2, 'heat_index_in_c': 27.09148, 'heat_index_in_f': 80.76514} [in views.py: 19]
+2025-11-05 16:23:10,916 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.6, 'temperature_in_f': 78.08, 'humidity': 94.9, 'heat_index_in_c': 27.09815, 'heat_index_in_f': 80.77716} [in views.py: 19]
+2025-11-05 16:24:10,896 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.6, 'temperature_in_f': 78.08, 'humidity': 95.1, 'heat_index_in_c': 27.10002, 'heat_index_in_f': 80.78053} [in views.py: 19]
+2025-11-05 16:25:10,928 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.4, 'temperature_in_f': 77.72, 'humidity': 93, 'heat_index_in_c': 26.56366, 'heat_index_in_f': 79.81506} [in views.py: 19]
+2025-11-05 16:26:13,323 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.2, 'temperature_in_f': 77.36, 'humidity': 92.5, 'heat_index_in_c': 26.06902, 'heat_index_in_f': 78.9247} [in views.py: 19]
+2025-11-05 16:27:10,999 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25, 'temperature_in_f': 77, 'humidity': 93.4, 'heat_index_in_c': 25.99407, 'heat_index_in_f': 78.7898} [in views.py: 19]
+2025-11-05 16:28:11,002 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25, 'temperature_in_f': 77, 'humidity': 94.1, 'heat_index_in_c': 26.01235, 'heat_index_in_f': 78.8227} [in views.py: 19]
+2025-11-05 16:29:10,900 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25, 'temperature_in_f': 77, 'humidity': 95, 'heat_index_in_c': 26.03585, 'heat_index_in_f': 78.865} [in views.py: 19]
+2025-11-05 16:30:11,016 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.1, 'temperature_in_f': 77.18, 'humidity': 95.6, 'heat_index_in_c': 25.75002, 'heat_index_in_f': 78.35051} [in views.py: 19]
+2025-11-05 16:31:10,907 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.2, 'temperature_in_f': 77.36, 'humidity': 96.2, 'heat_index_in_c': 26.00277, 'heat_index_in_f': 78.80545} [in views.py: 19]
+2025-11-05 16:32:11,023 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.2, 'temperature_in_f': 77.36, 'humidity': 96.6, 'heat_index_in_c': 25.99492, 'heat_index_in_f': 78.79133} [in views.py: 19]
+2025-11-05 16:33:10,909 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.3, 'temperature_in_f': 77.54, 'humidity': 97.2, 'heat_index_in_c': 26.26179, 'heat_index_in_f': 79.27169} [in views.py: 19]
+2025-11-05 16:34:10,928 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.3, 'temperature_in_f': 77.54, 'humidity': 97.2, 'heat_index_in_c': 26.26179, 'heat_index_in_f': 79.27169} [in views.py: 19]
+2025-11-05 16:35:10,925 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.2, 'temperature_in_f': 77.36, 'humidity': 95.5, 'heat_index_in_c': 26.01618, 'heat_index_in_f': 78.82959} [in views.py: 19]
+2025-11-05 16:36:10,953 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.1, 'temperature_in_f': 77.18, 'humidity': 93.3, 'heat_index_in_c': 26.10146, 'heat_index_in_f': 78.9831} [in views.py: 19]
+2025-11-05 16:37:11,035 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25, 'temperature_in_f': 77, 'humidity': 92.7, 'heat_index_in_c': 25.97579, 'heat_index_in_f': 78.7569} [in views.py: 19]
+2025-11-05 16:38:11,385 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.1, 'temperature_in_f': 77.18, 'humidity': 94.3, 'heat_index_in_c': 25.78288, 'heat_index_in_f': 78.40965} [in views.py: 19]
+2025-11-05 16:39:10,971 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.4, 'temperature_in_f': 77.72, 'humidity': 95.3, 'heat_index_in_c': 26.55427, 'heat_index_in_f': 79.79816} [in views.py: 19]
+2025-11-05 16:40:10,909 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.6, 'temperature_in_f': 78.08, 'humidity': 95.5, 'heat_index_in_c': 27.10372, 'heat_index_in_f': 80.78718} [in views.py: 19]
+2025-11-05 16:41:10,896 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.7, 'temperature_in_f': 78.26, 'humidity': 95.2, 'heat_index_in_c': 27.37903, 'heat_index_in_f': 81.28275} [in views.py: 19]
+2025-11-05 16:42:11,366 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.8, 'temperature_in_f': 78.44, 'humidity': 95.9, 'heat_index_in_c': 27.67675, 'heat_index_in_f': 81.81866} [in views.py: 19]
+2025-11-05 16:43:21,108 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.9, 'temperature_in_f': 78.62, 'humidity': 96.2, 'heat_index_in_c': 27.9756, 'heat_index_in_f': 82.35659} [in views.py: 19]
+2025-11-05 16:45:13,787 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26, 'temperature_in_f': 78.8, 'humidity': 94, 'heat_index_in_c': 28.188, 'heat_index_in_f': 82.7389} [in views.py: 19]
+2025-11-05 16:47:10,919 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.9, 'temperature_in_f': 78.62, 'humidity': 91.9, 'heat_index_in_c': 27.84403, 'heat_index_in_f': 82.11975} [in views.py: 19]
+2025-11-05 16:48:21,083 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 25.9, 'temperature_in_f': 78.62, 'humidity': 93.2, 'heat_index_in_c': 27.88396, 'heat_index_in_f': 82.19162} [in views.py: 19]
+2025-11-05 16:49:10,880 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26, 'temperature_in_f': 78.8, 'humidity': 93.7, 'heat_index_in_c': 28.17671, 'heat_index_in_f': 82.71859} [in views.py: 19]
+2025-11-05 16:50:11,440 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26, 'temperature_in_f': 78.8, 'humidity': 95, 'heat_index_in_c': 28.22562, 'heat_index_in_f': 82.80663} [in views.py: 19]
+2025-11-05 16:51:11,011 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26.1, 'temperature_in_f': 78.98, 'humidity': 95.3, 'heat_index_in_c': 28.52897, 'heat_index_in_f': 83.35267} [in views.py: 19]
+2025-11-05 16:52:10,943 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26.2, 'temperature_in_f': 79.16, 'humidity': 95.4, 'heat_index_in_c': 28.82956, 'heat_index_in_f': 83.89372} [in views.py: 19]
+2025-11-05 16:53:10,865 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26.2, 'temperature_in_f': 79.16, 'humidity': 95.9, 'heat_index_in_c': 28.85563, 'heat_index_in_f': 83.94064} [in views.py: 19]
+2025-11-05 16:54:10,954 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26.3, 'temperature_in_f': 79.34, 'humidity': 95.9, 'heat_index_in_c': 29.15867, 'heat_index_in_f': 84.48613} [in views.py: 19]
+2025-11-05 16:55:10,870 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26.4, 'temperature_in_f': 79.52, 'humidity': 94.7, 'heat_index_in_c': 29.38519, 'heat_index_in_f': 84.89387} [in views.py: 19]
+2025-11-05 16:56:10,967 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26.4, 'temperature_in_f': 79.52, 'humidity': 95.2, 'heat_index_in_c': 29.41839, 'heat_index_in_f': 84.95364} [in views.py: 19]
+2025-11-05 16:57:10,973 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26.5, 'temperature_in_f': 79.7, 'humidity': 94.9, 'heat_index_in_c': 29.70088, 'heat_index_in_f': 85.46211} [in views.py: 19]
+2025-11-05 16:58:10,874 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26.6, 'temperature_in_f': 79.88, 'humidity': 94.8, 'heat_index_in_c': 29.99851, 'heat_index_in_f': 85.99786} [in views.py: 19]
+2025-11-05 16:59:10,898 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26.6, 'temperature_in_f': 79.88, 'humidity': 95, 'heat_index_in_c': 30.0147, 'heat_index_in_f': 86.02699} [in views.py: 19]
+2025-11-05 17:00:10,878 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 26.6, 'temperature_in_f': 79.88, 'humidity': 94.6, 'heat_index_in_c': 29.98235, 'heat_index_in_f': 85.96877} [in views.py: 19]

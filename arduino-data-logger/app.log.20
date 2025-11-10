@@ -1,0 +1,180 @@
+2025-11-03 13:45:40,619 ERROR: Exception on /favicon.ico [GET] [in app.py: 1414]
+Traceback (most recent call last):
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1458, in dispatch_request
+    self.raise_routing_exception(req)
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1440, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\werkzeug\routing\map.py", line 655, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1341, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1281, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\app\__init__.py", line 69, in page_not_found
+    return render_template('404.html'), 404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: 404.html
+2025-11-03 13:46:28,065 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 29, 'temperature_in_f': 84.2, 'humidity': 90.3, 'heat_index_in_c': 37.31512, 'heat_index_in_f': 99.16788} [in views.py: 19]
+2025-11-03 13:47:33,819 ERROR: Exception on /favicon.ico [GET] [in app.py: 1414]
+Traceback (most recent call last):
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1458, in dispatch_request
+    self.raise_routing_exception(req)
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1440, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\werkzeug\routing\map.py", line 655, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1341, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1281, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\app\__init__.py", line 69, in page_not_found
+    return render_template('404.html'), 404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: 404.html
+2025-11-03 13:48:15,454 ERROR: Exception on /favicon.ico [GET] [in app.py: 1414]
+Traceback (most recent call last):
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1458, in dispatch_request
+    self.raise_routing_exception(req)
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1440, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\werkzeug\routing\map.py", line 655, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1341, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\app.py", line 1281, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\app\__init__.py", line 69, in page_not_found
+    return render_template('404.html'), 404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Farrel\IoT Project\Testing\SHSI-DEVELOPMENT-IoT\arduino-data-logger\.venv\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: 404.html
+2025-11-03 13:48:28,072 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 29, 'temperature_in_f': 84.2, 'humidity': 90.7, 'heat_index_in_c': 37.42798, 'heat_index_in_f': 99.37103} [in views.py: 19]
+2025-11-03 13:49:28,064 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 29, 'temperature_in_f': 84.2, 'humidity': 90.7, 'heat_index_in_c': 37.42798, 'heat_index_in_f': 99.37103} [in views.py: 19]
+2025-11-03 13:50:28,066 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 29, 'temperature_in_f': 84.2, 'humidity': 90.6, 'heat_index_in_c': 37.39972, 'heat_index_in_f': 99.32016} [in views.py: 19]
+2025-11-03 13:51:28,134 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 29, 'temperature_in_f': 84.2, 'humidity': 91.3, 'heat_index_in_c': 37.59823, 'heat_index_in_f': 99.67749} [in views.py: 19]
+2025-11-03 13:52:28,140 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 29, 'temperature_in_f': 84.2, 'humidity': 91, 'heat_index_in_c': 37.51296, 'heat_index_in_f': 99.524} [in views.py: 19]
+2025-11-03 13:53:28,070 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 29, 'temperature_in_f': 84.2, 'humidity': 90.8, 'heat_index_in_c': 37.45627, 'heat_index_in_f': 99.42197} [in views.py: 19]
+2025-11-03 13:54:28,063 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 29.1, 'temperature_in_f': 84.38, 'humidity': 91.3, 'heat_index_in_c': 37.94568, 'heat_index_in_f': 100.3029} [in views.py: 19]
+2025-11-03 13:55:28,111 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 29.1, 'temperature_in_f': 84.38, 'humidity': 90.9, 'heat_index_in_c': 37.82978, 'heat_index_in_f': 100.0943} [in views.py: 19]
+2025-11-03 13:56:28,065 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 29.1, 'temperature_in_f': 84.38, 'humidity': 91, 'heat_index_in_c': 37.85871, 'heat_index_in_f': 100.1464} [in views.py: 19]
+2025-11-03 13:57:28,069 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 29.2, 'temperature_in_f': 84.56, 'humidity': 90.8, 'heat_index_in_c': 38.1487, 'heat_index_in_f': 100.6683} [in views.py: 19]
+2025-11-03 13:58:28,177 INFO: dht22 : {'sensor_id': 'dht-garage', 'temperature_in_c': 29.3, 'temperature_in_f': 84.74, 'humidity': 90.6, 'heat_index_in_c': 38.43972, 'heat_index_in_f': 101.1922} [in views.py: 19]
